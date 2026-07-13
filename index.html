@@ -32,6 +32,7 @@ html{scroll-behavior:smooth;}
 @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} *{animation:none!important;transition:none!important;} }
 body{font-family:var(--font);background:var(--bg);color:var(--white);font-size:15.5px;line-height:1.65;padding-bottom:130px;}
 .wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
+.wrap-wide{max-width:1480px;margin:0 auto;padding:0 24px;}
 a{color:var(--muted);text-decoration:none;transition:color .18s;}
 a:hover{color:var(--white);}
 
@@ -54,12 +55,13 @@ section{padding:52px 0 8px;}
 .lede{max-width:760px;color:var(--muted);margin-bottom:26px;font-size:15px;}
 
 /* ---------- KPIs ---------- */
-.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;}
-.kpi{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px 20px 16px;}
-.kpi .lbl{font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
-.kpi .num{font-weight:800;font-size:32px;line-height:1.25;letter-spacing:-.02em;color:var(--white);font-variant-numeric:tabular-nums;margin:4px 0 2px;}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px 24px 20px;display:flex;flex-direction:column;}
+.kpi .lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);line-height:1.55;}
+.kpi .num{font-weight:800;font-size:36px;line-height:1.15;letter-spacing:-.02em;color:var(--white);font-variant-numeric:tabular-nums;margin:10px 0 6px;white-space:nowrap;}
+.kpi .num small{font-size:19px;font-weight:700;letter-spacing:0;opacity:.85;}
 .kpi.blue .num, .kpi.amber .num{color:var(--green);}
-.kpi .note{font-size:12px;color:var(--muted);line-height:1.5;}
+.kpi .note{font-size:12.5px;color:var(--muted);line-height:1.55;margin-top:auto;}
 
 /* ---------- painel do mapa ---------- */
 .abrigo{background:#04042a;border:1px solid var(--line);border-radius:24px;padding:28px;position:relative;}
@@ -113,7 +115,7 @@ section{padding:52px 0 8px;}
 
 /* ---------- tabela ---------- */
 .tbl-wrap{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow-x:auto;}
-table{width:100%;border-collapse:collapse;font-size:13px;min-width:900px;}
+table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:1150px;}
 thead th{font-weight:700;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;text-align:left;background:var(--card2);color:var(--muted);padding:12px;position:sticky;top:0;cursor:pointer;white-space:nowrap;}
 thead th:hover{color:var(--white);}
 thead th .arw{opacity:.5;font-size:11px;}
@@ -176,11 +178,11 @@ footer.certta{border-top:1px solid var(--line);margin-top:56px;padding:52px 0 40
   <div class="wrap">
     <div class="placa"><span class="tag">01 · Painel geral</span><span class="rota">KPIs do plano</span></div>
     <div class="kpis">
-      <div class="kpi blue"><div class="lbl">Impactos no período</div><div class="num">8,11 mi</div><div class="note">soma dos 19 pontos contratados</div></div>
-      <div class="kpi"><div class="lbl">Investimento negociado</div><div class="num">R$ 216,8 mil</div><div class="note">R$ 716,1 mil em tabela</div></div>
-      <div class="kpi amber"><div class="lbl">Desconto médio efetivo</div><div class="num">69,7%</div><div class="note">ponderado pelo valor de tabela</div></div>
-      <div class="kpi"><div class="lbl">CPM médio do plano</div><div class="num">R$ 26,73</div><div class="note">custo por mil impactos</div></div>
-      <div class="kpi"><div class="lbl">Inserções digitais</div><div class="num">469 mil</div><div class="note">66 telas digitais + 2 faces estáticas (portões 36 e 38)</div></div>
+      <div class="kpi blue"><div class="lbl">Impactos no período</div><div class="num">8,11 <small>mi</small></div><div class="note">soma dos 19 pontos contratados</div></div>
+      <div class="kpi"><div class="lbl">Investimento negociado</div><div class="num"><small>R$</small> 216,8 <small>mil</small></div><div class="note">R$ 716,1 mil em tabela</div></div>
+      <div class="kpi amber"><div class="lbl">Desconto médio efetivo</div><div class="num">69,7<small>%</small></div><div class="note">ponderado pelo valor de tabela</div></div>
+      <div class="kpi"><div class="lbl">CPM médio do plano</div><div class="num"><small>R$</small> 26,73</div><div class="note">custo por mil impactos</div></div>
+      <div class="kpi"><div class="lbl">Inserções digitais</div><div class="num">469 <small>mil</small></div><div class="note">66 telas digitais + 2 faces estáticas (portões 36 e 38)</div></div>
       <div class="kpi blue"><div class="lbl">Instituições financeiras</div><div class="num">13+</div><div class="note">grupos com sede ou escritório no raio dos pontos — ver seção 04</div></div>
     </div>
   </div>
@@ -322,6 +324,8 @@ footer.certta{border-top:1px solid var(--line);margin-top:56px;padding:52px 0 40
 <section id="tabela">
   <div class="wrap">
     <div class="placa"><span class="tag">05 · Plano detalhado</span><span class="rota">19 pontos contratados — clique nos títulos para ordenar</span></div>
+  </div>
+  <div class="wrap-wide">
     <div class="tbl-wrap">
       <table id="plano">
         <thead><tr>
@@ -360,46 +364,6 @@ footer.certta{border-top:1px solid var(--line);margin-top:56px;padding:52px 0 40
   </div>
 </section>
 
-<footer class="certta">
-  <div class="wrap">
-    <div class="f-grid">
-      <div>
-        <div class="f-logo"><span class="c">c</span>ertta</div>
-        <p class="f-tag">The future begins with trust.</p>
-      </div>
-      <div class="f-col">
-        <h5>Dashboard</h5>
-        <ul>
-          <li><a href="#kpis">Painel geral</a></li>
-          <li><a href="#mapa">Geolocalização</a></li>
-          <li><a href="#analytics">Analytics</a></li>
-        </ul>
-      </div>
-      <div class="f-col">
-        <h5>Plano</h5>
-        <ul>
-          <li><a href="#financeiro">Audiência financeira</a></li>
-          <li><a href="#tabela">Plano detalhado</a></li>
-          <li><a href="#kpis">Voltar ao topo</a></li>
-        </ul>
-      </div>
-      <div class="f-col">
-        <h5>Comunidade</h5>
-        <div class="socials">
-          <a href="#" aria-label="Slack"><svg viewBox="0 0 24 24"><rect x="9.5" y="3" width="4" height="8" rx="2"/><rect x="9.5" y="13" width="4" height="8" rx="2"/><rect x="3" y="9.5" width="8" height="4" rx="2" transform="rotate(0)"/><rect x="13" y="9.5" width="8" height="4" rx="2"/></svg></a>
-          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.5"/><circle cx="16.6" cy="7.4" r="0.6" fill="currentColor" stroke="none"/></svg></a>
-          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4"/><line x1="8.5" y1="11" x2="8.5" y2="16"/><circle cx="8.5" cy="8.2" r="0.5" fill="currentColor"/><path d="M12 16v-3.2a2.2 2.2 0 0 1 4.4 0V16"/><line x1="12" y1="11" x2="12" y2="16"/></svg></a>
-          <a href="#" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a>
-          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="4"/><path d="M10 9.5v5l4.5-2.5z" fill="currentColor" stroke="none"/></svg></a>
-        </div>
-      </div>
-    </div>
-    <div class="f-bottom">
-      <span>©2026. Certta. All rights reserved.</span>
-      <span>Plano DOOH São Paulo · 04–31 ago · dados do veículo + dados abertos da Prefeitura</span>
-    </div>
-  </div>
-</footer>
 
 <nav class="bottomnav" aria-label="Navegação do dashboard">
   <a class="nl" href="#kpis">Painel</a>
